@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # غيّريها لو بتشتغلي بفرع تاني
+      - main   # غيّريها لو عندك فرع تاني
 
 permissions:
   contents: read
@@ -34,15 +34,6 @@ jobs:
           path: ./dist   # مكان الـ build بتاع Vite
 
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
     needs: build
     runs-on: ubuntu-latest
     environment:
