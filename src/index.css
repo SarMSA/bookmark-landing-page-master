@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  width: 100dvw;
+  overflow-x: hidden;
+  height: 100%;
+  user-select: none;
+}
+.screen-max-width {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  position: relative;
+  max-width: 1536px;
+}
+.flex-center {
+  @apply flex justify-center items-center;
+}
+.common-padding {
+  @apply py-10 sm:px-10 px-5 lg:py-20;
+}
+.button {
+  @apply inline-block px-6 py-2 bg-blue-600 hover:bg-white border-2 border-blue-600 text-white hover:text-blue-600 rounded-md shadow-md  transition;
+}
+.button-contact {
+  @apply inline-block px-6 py-2 bg-red-400 hover:bg-white border-2 border-red-400 text-white hover:text-red-400 rounded-md shadow-md  transition;
+}
+.buttonFirefox {
+  @apply inline-block px-6 py-2  border-2 border-gray-50 hover:border-blue-950 bg-gray-50 text-blue-950  rounded-md shadow-md  transition;
+}
+.section-heading {
+  @apply capitalize text-blue-950 lg:text-5xl md:text-4xl text-3xl  mb-5 font-medium;
+}
+/* menu */
+.menuMobile {
+  height: 100vh;
+  padding: 7.25rem 1.25rem;
+  width: 100vw;
+  background-color: hsl(229, 31%, 21%, 0.96);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.illustration-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 130%;
+  height: 80%;
+  background-color: #3b82f6; /* tailwind blue-500 */
+  z-index: -1;
+}
+.illustration-wrapper.bg-side-right::before {
+  right: -50%;
+  top: 20%;
+  border-radius: 9999px 0 0 9999px;
+}
+.illustration-wrapper.bg-side-left::before {
+  left: -45%;
+  top: 30%;
+  border-radius: 0 9999px 9999px 0;
+}
+@media (min-width: 768px) {
+  .illustration-wrapper::before {
+    width: 140%;
+    height: 85%;
+  }
+  .illustration-wrapper.bg-side-right::before {
+    top: 30%;
+    right: -65%;
+  }
+  .illustration-wrapper.bg-side-left::before {
+    left: -60%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .illustration-wrapper::before {
+    top: 20%;
+  }
+  .illustration-wrapper.bg-side-left::before {
+    left: -80%;
+  }
+}
