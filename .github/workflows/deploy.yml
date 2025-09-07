@@ -3,7 +3,8 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # 
+      - main   # أي push على main هيعمل build & deploy
+
 permissions:
   contents: read
   pages: write
@@ -30,8 +31,8 @@ jobs:
       - name: Upload build output
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist   
-          
+          path: ./dist   # Vite بيطلع الملفات هنا
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
