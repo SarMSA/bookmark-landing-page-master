@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # أي push على main هيعمل build & deploy
+      - main   # غيّريها لو بتشتغلي بفرع تاني
 
 permissions:
   contents: read
@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -31,9 +31,18 @@ jobs:
       - name: Upload build output
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist   # Vite بيطلع الملفات هنا
+          path: ./dist   # مكان الـ build بتاع Vite
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
     needs: build
     runs-on: ubuntu-latest
     environment:
