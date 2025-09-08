@@ -57,7 +57,7 @@ body {
   bottom: 0;
   width: 130%;
   height: 80%;
-  background-color: #3b82f6; /* tailwind blue-500 */
+  background-color: hsl(231, 69%, 60%); /* tailwind blue-500 */
   z-index: -1;
 }
 .illustration-wrapper.bg-side-right::before {
