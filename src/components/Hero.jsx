@@ -9,7 +9,9 @@ const Hero = () => {
       <div className="screen-max-width  flex-center flex-col-reverse md:flex-row md:text-left md:gap-6">
         {/* content */}
         <div className="flex flex-col align-center flex-1  ">
-          <h2 className=" section-heading">{headers[0].title}</h2>
+          <h1 className="section-heading text-4xl md:text-5xl font-medium mb-4">
+            {headers[0].title}
+          </h1>
           <p className="text-gray-400 text-base leading-relaxed tracking-wider mb-5">
             {headers[0].desc}
           </p>
