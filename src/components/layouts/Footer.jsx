@@ -14,9 +14,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row gap-10 lg:gap-20 items-center">
           <LogoBookmark className="text-white" aria-hidden="true" />
           <nav aria-label="Footer navigation">
-            <ul className="mb-10 md:mb-0 flex flex-col md:flex-row gap-9 md:gap-14 justify-center">
+            <ul
+              className="mb-10 md:mb-0 flex flex-col md:flex-row gap-9 md:gap-14 justify-center"
+              role="list"
+            >
               {navLinks.map((link, index) => (
-                <li key={index}>
+                <li key={index} role="listitem">
                   <a
                     href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
                     className="uppercase text-gray-50 tracking-widest text-md hover:text-red-400 transition-colors"

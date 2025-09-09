@@ -46,23 +46,24 @@ const Navbar = () => {
             aria-expanded={showMenu}
           />
         ) : (
-          <div>
-            <ul
-              className="transition-colors duration-100 uppercase flex gap-8 tracking-widest font-medium items-center cursor-pointer text-blue-950"
-              role="menubar"
-            >
-              {navLinks.map((link, index) => (
-                <li className="hover:text-red-400" key={index} role="menuitem">
-                  {link}
-                </li>
-              ))}
-              <button
-                type="button"
-                className="px-8 py-2 uppercase rounded-lg bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400 transition-colors duration-100"
+          <div role="menubar" className="flex items-center gap-8">
+            {navLinks.map((link, index) => (
+              <a
+                href="#"
+                key={index}
+                role="menuitem"
+                className="transition-colors duration-100 uppercase tracking-widest font-medium text-blue-950 hover:text-red-400"
               >
-                login
-              </button>
-            </ul>
+                {link}
+              </a>
+            ))}
+            <button
+              type="button"
+              role="menuitem"
+              className="px-8 py-2 uppercase rounded-lg bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400 transition-colors duration-100"
+            >
+              login
+            </button>
           </div>
         )}
       </div>
