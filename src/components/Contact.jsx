@@ -32,7 +32,7 @@ const Contact = () => {
 
   return (
     <section className="w-screen common-padding bg-blue-600">
-      <div className="md:w-3/4 flex-center flex-col mx-auto">
+      <div className="md:w-1/2 flex-center flex-col mx-auto">
         <div className="text-white flex-center flex-col text-center">
           <p className="uppercase leading-relaxed tracking-[6px] mb-10">
             {headers[4].desc}
@@ -44,10 +44,14 @@ const Contact = () => {
         <form
           onSubmit={handleSubmit}
           noValidate
-          className="flex flex-col md:flex-row gap-6 w-full "
+          className="flex flex-col md:flex-row gap-6 w-full  screen-max-width"
         >
           <div className="relative w-full">
+            <label htmlFor="email-input" className="sr-only">
+              {headers[4].form.placeholder}
+            </label>
             <input
+              id="email-input"
               type="email"
               value={email}
               onChange={(e) => {
@@ -61,7 +65,9 @@ const Contact = () => {
                 error ? "border-2 border-red-400" : ""
               } w-full`}
               aria-invalid={!!error}
-              aria-describedby="email-error"
+              aria-describedby={error ? "email-error" : undefined}
+              aria-required="true"
+              required
             />
             {error && (
               <>

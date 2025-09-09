@@ -57,7 +57,7 @@ body {
   bottom: 0;
   width: 130%;
   height: 80%;
-  background-color: #3b82f6; /* tailwind blue-500 */
+  background-color: hsl(231, 69%, 60%); /* tailwind blue-500 */
   z-index: -1;
 }
 .illustration-wrapper.bg-side-right::before {
@@ -67,7 +67,7 @@ body {
 }
 .illustration-wrapper.bg-side-left::before {
   left: -45%;
-  top: 30%;
+  top: 35%;
   border-radius: 0 9999px 9999px 0;
 }
 @media (min-width: 768px) {
@@ -90,5 +90,19 @@ body {
   }
   .illustration-wrapper.bg-side-left::before {
     left: -80%;
+  }
+  .illustration-wrapper.bg-side-right::before {
+    top: 20%;
+  }
+}
+@media (min-width: 1440px) {
+  .illustration-wrapper::before {
+    top: 20%;
+  }
+  .illustration-wrapper.bg-side-left::before {
+    left: -80%;
+  }
+  .illustration-wrapper.bg-side-right::before {
+    top: 15%;
   }
 }

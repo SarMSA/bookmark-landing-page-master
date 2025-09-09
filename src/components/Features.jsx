@@ -23,7 +23,11 @@ const Features = () => {
             key={index}
           >
             <button
-              className="py-5 h-full text-blue-950 capitalize font-normal hover:border-b-4 px-10 hover:border-b-red-400 border-b-4 border-b-transparent"
+              className={`py-5 h-full text-blue-950 capitalize px-10 font-normal  border-b-4  ${
+                activeContent === item.btnName
+                  ? "border-red-400 "
+                  : "border-transparent"
+              }`}
               onClick={() => setActiveContent(item.btnName)}
             >
               {item.btnName}

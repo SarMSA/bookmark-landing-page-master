@@ -27,7 +27,7 @@ const Faq = () => {
           {headers[3].desc}
         </p>
       </div>
-      <div className="flex-center  flex-col gap-6 ">
+      <div className="flex-center  flex-col gap-6 screen-max-width  ">
         {headers[3].fags.map((item, i) => (
           <div
             className="text-left cursor-pointer w-full md:w-3/4 border-b-[1px] border-gray-300 py-5"
