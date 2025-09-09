@@ -15,7 +15,10 @@ const MenuMobile = ({ navLinks }) => {
         ))}
         <li className="w-full">
           <hr className="w-full" />
-          <button className="px-8 py-2 mt-10 uppercase rounded-lg w-full text-white border-2 border-gray-50 transition-colors duration-100">
+          <button
+            type="button"
+            className="px-8 py-2 mt-10 uppercase rounded-lg w-full text-white border-2 border-gray-50 transition-colors duration-100"
+          >
             login
           </button>
         </li>

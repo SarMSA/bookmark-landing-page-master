@@ -66,7 +66,7 @@ const Faq = () => {
             </div>
           </div>
         ))}
-        <button className="button mt-10 capitalize">
+        <button type="button" className="button mt-10 capitalize">
           {headers[3].cta.title}
         </button>
       </div>

@@ -23,6 +23,7 @@ const Features = () => {
             key={index}
           >
             <button
+              type="button"
               className={`py-5 h-full text-blue-950 capitalize px-10 font-normal  border-b-4  ${
                 activeContent === item.btnName
                   ? "border-red-400 "
