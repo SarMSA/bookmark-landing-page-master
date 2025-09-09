@@ -15,18 +15,20 @@ const MenuMobile = ({ navLinks }) => {
         ))}
         <li className="w-full">
           <hr className="w-full" />
-          <button
-            type="button"
-            className="px-8 py-2 mt-10 uppercase rounded-lg w-full text-white border-2 border-gray-50 transition-colors duration-100"
-          >
-            login
-          </button>
+          <div className="p-6">
+            <button
+              type="button"
+              className="px-8 py-2 w-full uppercase rounded-lg text-white border-2 border-gray-50 transition-colors duration-100"
+            >
+              login
+            </button>
+          </div>
+        </li>
+        <li className="w-full flex-center gap-6 p-4">
+          <img src={iconFacebook} alt="facebook" />
+          <img src={iconTwitter} alt="twitter" />
         </li>
       </ul>
-      <div className="flex-center gap-6 p-4">
-        <img src={iconFacebook} alt="facebook" />
-        <img src={iconTwitter} alt="twitter" />
-      </div>
     </div>
   );
 };
